@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="~/StyleSheet/main.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <p>Please suggest on ui.</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Properties')" id="defaultOpen">Properties</button>
+  <button class="tablinks" onclick="openCity(event, 'Legal_Services')">Legal Services</button>
+  <button class="tablinks" onclick="openCity(event, 'Interiors')">Interiors</button>
+</div>
+
+<div id="Properties" class="tabcontent">
+  <h3>Properties</h3>
+  <p>All the details related to property in selected area.</p>
+</div>
+
+<div id="Legal_Services" class="tabcontent">
+  <h3>Legal Services</h3>
+  <p>Emty textarea with user details to submit legal queries.</p> 
+</div>
+
+<div id="Interiors" class="tabcontent">
+  <h3>Interiors</h3>
+  <p>Post deal, wood,painting, plumbing work details in selected area.</p>
+</div>
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
+
